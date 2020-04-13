@@ -1,3 +1,39 @@
+## Project Bootstrap
+
+1. Use all small letter naming conventions for project naming. Do not use any underscore(_) or hyphen(-) for multiple word project names. i.e rokomari, orderservice, quotationservice etc. This will keep the package names clean.
+
+1. Place the Hibernate entity classes in the entity package.
+
+1. Use repository and service packages for Repository and Service classes.
+
+1. Place template based controllers in the web.controller package and rest controllers in the web.restcontroller package.
+
+1. For cloud projects (config server, eureka server, cloud services etc) and services i.e you need to add cloud dependencies in gradle.build file. Make sure you have these property blocks in your build.gradle file - 
+
+    ```java
+    ext {
+        set('springCloudVersion', "Hoxton.SR3")
+    }
+
+    dependencyManagement {
+        imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+    ```
+
+
+
+## Application Properties
+
+
+## Database
+
+1. Whatever database you choose just add ‘_db’ after the application name and use that as the database name. For the quotationservice application, the database name will be quotationservice_db.
+
+1. Use underscore based small letter naming convention for table names and table column names. i.e customer_order, product_purchase. Avoid any sort of short name or acronym for table names.
+
+
 ## Hibernate
 
 #### This guide is specifically for Spring Boot projects.
@@ -181,7 +217,29 @@
     private String content;
     ```
 
-1. JOINS - yet to come....
+1. JOINs - yet to come....
+
+
+
+
+
+
+
+
+
+
+
+## Port Arrangement
+
+1. Use Config server’s (configserver) port as 8888.
+
+1. Use Eureka server’s (eurekaserver) port as 8761.
+
+1. Start service application port from 8080. Then 8081, 8082 etc. If it reaches 8099 go back to 8060 and increase upto 8079. In the same fashion go back to 8040, 8020, 8000. For now 100 services should be enough for us.
+
+
+## Project Bootstrap
+
 
 
 
