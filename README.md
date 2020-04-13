@@ -110,7 +110,80 @@
 
 1. Use Hibernate/JPA annotations on property level. Mixing up annotation on property and setter levels creates compilation issue.
 
+1. Use Long data type and IDENTITY GenerationType for the id property (primary key). Do not use TABLE or SEQUENCE GenerationType. Those strategies maintains an extra table in the database. Define the id property in AbstractAuditingEntity class. This is applicable for SQL databases. Need to figure out the way for no-SQL databases.
+
     ```java
-    var s = "JavaScript syntax highlighting";
-    alert(s);
+    @@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     ```
+
+1. Use @NotNull annotation to define not null validation for a property. Using this annotation will also create the column with nullable in database. So no need to use @Column(nullable = true) annotation. Use @Size annotaion to define minimum and maximum length limit. This will be used for entity validation. max value will be used as varchar length in database. Do not use @NotEmpty or @NotBlank annotations. Using those will not create not nullable column in database.
+
+    ```java
+    @NotNull
+    @Size(min = 5, max = 1023)
+    private String title;
+    ```
+
+1. Use following for huge texts. This will create text type column in database. Drop the @NotNull annotation if not neede.
+
+    ```java
+    @NotNull
+    @Column(columnDefinition = "TEXT")
+    private String content;
+    ```
+
+1. Use @Enumerated annotation for enum properties. Most of the cases @NotNull property will be needed.
+
+    ```java
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    private Status status;
+    ```
+
+1. If nullable=false needed in database column (which makes not nullable in application), use @NotNull annotion in Entity.
+
+1. Use 127, 255, 511, 1023, 2047, 4095 as String length. For lengthier cases use TEXT. These are few examples. 
+
+    ```java
+    @NotNull
+    @Size(min = 1, max = 255)
+    private String name;
+
+    @NotNull
+    @Size(min = 5, max = 255)
+    private String password;
+
+    @NotNull
+    @Size(min = 5, max = 255)
+    @Column(unique = true)
+    private String email;
+
+    @NotNull
+    @Size(min = 5, max = 255)
+    @Column(unique = true)
+    private String phone;
+
+    @DateTimeFormat(pattern = "dd-MMM-yyyy")
+    private Date dateOfBirth;
+
+    @NotNull
+    @Size(min = 5, max = 1023)
+    private String title;
+
+    @NotNull
+    @Size(min = 5, max = 2047)
+    private String topSummary;
+
+    @NotNull
+    @Column(columnDefinition = "TEXT")
+    private String content;
+    ```
+
+1. JOINS - yet to come....
+
+
+
+
+
