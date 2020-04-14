@@ -10,7 +10,7 @@
 
 1. For cloud projects (config server, eureka server, cloud services etc) and services i.e you need to add cloud dependencies in gradle.build file. Make sure you have these property blocks in your build.gradle file - 
 
-    ```java
+    ```yaml
     ext {
         set('springCloudVersion', "Hoxton.SR3")
     }
@@ -25,6 +25,28 @@
 
 
 ## Application Properties
+
+1. For Monolithic application always use these properties as first two. Although application.name property is not that useful in monolithic case, but we will use it for the sake of future microservice migration. Server port is not fixed, it better to mention it explicitly. 
+
+    ```yaml
+    spring.application.name=spring-boot-mysql
+    server.port=8080
+    ```
+
+1. Use these properties for MySQL -
+
+    ```yaml
+    spring.datasource.url=jdbc:mysql://localhost:3306/spring-boot-mysql_db
+    spring.datasource.username=root
+    spring.datasource.password=root
+    ```
+
+1. Remove MySQL properties from production. Try to maintain this type of difference using profile. ddl-auto's default value is none, which does to do any database changes from hibernate entity. Production database change should be executed separately. 
+
+    ```yaml
+    spring.jpa.show-sql = true
+    spring.jpa.hibernate.ddl-auto = update
+    ```
 
 
 ## Database
@@ -219,13 +241,18 @@
 
 1. JOINs - yet to come....
 
+1. Explicitly disable Entity class default constructor with a private access modifier. Use a static method for instance creation. Use newObjectWithDefaults as method name. Assign all the default properties in this method.
 
+    ```java
+    private Tag() {
+    }
 
-
-
-
-
-
+    public static Tag newObjectWithDefaults() {
+        Tag tag = new Tag();
+        tag.postCount = 0;
+        return tag;
+    }
+    ```
 
 
 
@@ -236,12 +263,3 @@
 1. Use Eureka server’s (eurekaserver) port as 8761.
 
 1. Start service application port from 8080. Then 8081, 8082 etc. If it reaches 8099 go back to 8060 and increase upto 8079. In the same fashion go back to 8040, 8020, 8000. For now 100 services should be enough for us.
-
-
-## Project Bootstrap
-
-
-
-
-
-
