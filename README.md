@@ -43,7 +43,7 @@
 
 1. Remove MySQL properties from production. Try to maintain this type of difference using profile. ddl-auto's default value is none, which does to do any database changes from hibernate entity. Production database change should be executed separately. 
 
-    ```yaml
+    ```yml
     spring.jpa.show-sql = true
     spring.jpa.hibernate.ddl-auto = update
     ```
@@ -59,6 +59,24 @@
 1. Whatever database you choose just add ‘_db’ after the application name and use that as the database name. For the quotationservice application, the database name will be quotationservice_db. If it is a microservice add the application name in from of it. If quotationservice is a microservice and part of notebook application, use notebook_quotationservice_db as the database name.
 
 1. Use underscore based small letter naming convention for table names and table column names. i.e customer_order, product_purchase. Avoid any sort of short name or acronym for table names.
+
+
+## Docker
+
+1. Use container_name property in docker_compose.yml file. Naming format would be [application_name]_[service_name]_[container_service_name]. If redis is used for Rokomari application's quotationservice service -
+
+    ```yml
+    version: "3.5"
+
+    services:
+
+        redis:
+            container_name: rokomari_quotationservice_redis
+            image: redis
+            ports:
+                - "6380:6379"
+            restart: on-failure
+    ```
 
 
 ## Hibernate
