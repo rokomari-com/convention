@@ -6,7 +6,7 @@
 
 1. Use repository and service packages for Repository and Service classes.
 
-1. Place template based controllers in the web.controller package and rest controllers in the web.restcontroller package.
+1. Place view template based controllers in the web.controller package and rest controllers in the web.restcontroller package.
 
 1. For cloud projects (config server, eureka server, cloud services etc) and services i.e you need to add cloud dependencies in gradle.build file. Make sure you have these property blocks in your build.gradle file - 
 
@@ -21,6 +21,11 @@
         }
     }
     ```
+
+
+## Application Architecture
+
+1. Do no Inject Repository classes directly into Controller classes. Repository layer should close to database and Service layer with all the business logic.  
 
 
 
@@ -50,6 +55,19 @@
 
 
 ## Application Folder Structure
+
+1. Use following folder structure. 
+
+        └───springbootmysql
+            ├───config                  <- all the configs, use inner package if needed i.e redis, solr
+            ├───entity                  <- hibenate mapping classes
+            ├───enumeration             <- enumerations which are used multiple class wide
+            ├───exception               <- custom exceptions
+            ├───repository
+            ├───service
+            └───web
+                ├───controller          <- view template based controllers
+                └───restcontroller      <- rest controllers
 
 
 
@@ -284,5 +302,3 @@
 1. Use Config server’s (configserver) port as 8888.
 
 1. Use Eureka server’s (eurekaserver) port as 8761.
-
-1. Start service application port from 8080. Then 8081, 8082 etc. If it reaches 8099 go back to 8060 and increase upto 8079. In the same fashion go back to 8040, 8020, 8000. For now 100 services should be enough for us.
