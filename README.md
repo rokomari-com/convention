@@ -97,6 +97,14 @@
     ```
 
 
+## File and Method Naming
+
+1. View files
+1. Static folders (image, css, javascript, favicon etc)
+1. Controllers and methods
+1. Services and methods
+1. Repositories and methods
+
 ## Hibernate
 
 #### This guide is specifically for Spring Boot projects.
