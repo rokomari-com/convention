@@ -1,5 +1,7 @@
 ## Project Bootstrap
 
+1. Do not use Gradle wrapper. Manually install Gradle in development machine and update it regularly.
+
 1. Use all small letter naming conventions for project naming. Do not use any underscore(_) or hyphen(-) for multiple word project names. i.e rokomari, orderservice, quotationservice etc. This will keep the package names clean.
 
 1. Place the Hibernate entity classes in the entity package.
