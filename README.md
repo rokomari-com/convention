@@ -107,6 +107,12 @@
 1. Services and methods
 1. Repositories and methods
 
+
+## General Convention
+
+1. Do not use Property level Autowiring. Use Constructor level Autowiring.
+
+
 ## Hibernate
 
 #### This guide is specifically for Spring Boot projects.
@@ -312,3 +318,10 @@
 1. Use Config server’s (configserver) port as 8888.
 
 1. Use Eureka server’s (eurekaserver) port as 8761.
+
+
+## View Layer
+
+1. Use hyphen separated small case for URL.
+
+        rokomari.com/this-is-an-example-url
