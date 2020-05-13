@@ -25,6 +25,50 @@
     ```
 
 
+## API Design Guide
+
+1. You should not directly map database tables into the API. So Entity/Document classes should never be exposed by an API. Use a DTO class instead.
+
+1. Do not directly receive Entity/Document class object from request. Use a DTO class instead.
+
+1. Do not use 'DTO' suffix for a DTO class. **more on this later** 
+
+1. Avoid using verb in API URL. Use resource name instead.
+
+1. Use versioning in API. For example - 
+
+        GET     walletservice/api/v1/transactions
+    
+    1. We are accessing a walletservice API in this example.
+    1. This in API version 1
+    1. We are accessing transaction resource
+
+1. Use HTTP verb to specify action on resources.
+
+        1. GET     walletservice/api/v1/transactions
+        2. GET     walletservice/api/v1/transactions/[transation_id]
+        3. POST    walletservice/api/v1/transactions   [body with transation info]
+        4. PUT     walletservice/api/v1/transactions/[transaction_id]   [body with transation info]
+        5. DELETE  walletservice/api/v1/transactions/[transaction_id]
+
+    1. Returns list of Transaction
+    1. Returns a single Transaction with given transaction_id
+    1. Creates a new Transaction with given transaction info in the body
+    1. Updates existing transaction of given transaction_id with given transaction info in the body
+    1. Deletes the transaction wtih given transaction_id
+
+1. Add filtering values in the URL with parameter.
+
+        GET     walletservice/api/v1/transactions?status=ACTIVE&name=asdf
+
+1. in, gt these can be used for advanced filtering.
+
+1. Add pagination in the URL with parameter. page_size should be optional. Use a upper boundary value for page_size in the service.
+
+        GET     walletservice/api/v1/transactions?page_no=5&page_size=50
+
+
+
 ## Application Architecture
 
 1. Do no Inject Repository classes directly into Controller classes. Repository layer should close to database and Service layer with all the business logic.  
@@ -61,15 +105,19 @@
 1. Use following folder structure. 
 
         └───springbootmysql
-            ├───config                  <- all the configs, use inner package if needed i.e redis, solr
-            ├───entity                  <- hibenate mapping classes
+            ├───config                  <- all the configs, use inner package if needed
+            |   ├───redis
+            |   └───solr        
+            ├───entity/document         <- hibenate mapping classes
             ├───enumeration             <- enumerations which are used multiple class wide
             ├───exception               <- custom exceptions
             ├───repository
             ├───service
+            ├───utility
             └───web
                 ├───controller          <- view template based controllers
-                └───restcontroller      <- rest controllers
+                └───restcontroller      
+                    └───v1              <- 1st version rest controllers
 
 
 
@@ -325,3 +373,6 @@
 1. Use hyphen separated small case for URL.
 
         rokomari.com/this-is-an-example-url
+
+
+https://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html
