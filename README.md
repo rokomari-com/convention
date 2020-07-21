@@ -108,7 +108,7 @@
             ├───config                  <- all the configs, use inner package if needed
             |   ├───redis
             |   └───solr        
-            ├───entity/document         <- hibenate mapping classes
+            ├───domain                  <- hibenate mapping classes
             ├───enumeration             <- enumerations which are used multiple class wide
             ├───exception               <- custom exceptions
             ├───repository
@@ -127,6 +127,11 @@
 1. Whatever database you choose just add ‘_db’ after the application name and use that as the database name. For the quotationservice application, the database name will be quotationservice_db. If it is a microservice add the application name in from of it. If quotationservice is a microservice and part of notebook application, use notebook_quotationservice_db as the database name.
 
 1. Use underscore based small letter naming convention for table names and table column names. i.e customer_order, product_purchase. Avoid any sort of short name or acronym for table names.
+
+
+## Datatype
+
+1. Do not use Float or Double for monetory calculations. Use BigDecimal.
 
 
 ## Docker
