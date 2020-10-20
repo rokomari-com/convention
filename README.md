@@ -111,6 +111,7 @@
             ├───domain                  <- hibenate mapping classes
             ├───enumeration             <- enumerations which are used multiple class wide
             ├───exception               <- custom exceptions
+            ├───model                   <- model classes used inside application or for REST APIs
             ├───repository
             ├───service
             ├───utility
@@ -120,6 +121,13 @@
                     └───v1              <- 1st version rest controllers
 
 
+
+## Copyright Text
+
+1. Use following copyright text in all .java files - 
+
+        Copyright (c), Onnorokom Web Services Ltd (OWSL) and/or its affiliates. All rights reserved.
+        OWSL PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
 
 
 ## Database
