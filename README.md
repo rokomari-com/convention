@@ -121,6 +121,16 @@
                     └───v1              <- 1st version rest controllers
 
 
+## Banner
+
+1. Add custom banner in the Spring Boot project.
+
+    1. From here - http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type
+    1. Use Big font
+
+1. Add project info text under the banner. Add main project name before service name for microservice.
+
+        :: rokomari_notificationservice :: Spring Boot${spring-boot.formatted-version} :: (c) OWSL 2012-2020 ::
 
 ## Copyright Text
 
