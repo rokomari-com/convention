@@ -1,5 +1,7 @@
 # Code conventions followed in [Rokomari.com](https://www.rokomari.com)
 
+---
+
 # Table of Contents
 
 - [Naming Conventions](https://github.com/rokomari-com/convention/blob/master/README.md#naming-conventions) : Describe various programming naming schema (ex: variable, method names etc)
@@ -55,8 +57,8 @@
 - should be all `lowercase`
 - should be only one word after each dot
 - only use English words, avoid especial characters (`_` /`$` etc)
-```
-com.rokomari.model
+```java
+package com.rokomari.model
 ```
 
 ## Class Naming
@@ -67,8 +69,10 @@ com.rokomari.model
 - for domain classes, use `UPERCASE` domain part postfix. (Ex: `RefundDTO` instead of ~~RefundDto~~)
 - if any ***Design Pattern*** used, should add the patterns name in the postfix. (Ex: `CustomerObserver`, `ItemObservable`, `CakeFactory`)
 - avoid uncommon abbreviations in naming. (Ex: use `AbstractCake` instead of ~~AbsCake~~)
-```
-CompanyService
+```java
+public class CompanyService {
+    ...
+}
 ```
 
 ## Interface Naming
@@ -76,7 +80,7 @@ CompanyService
 - should be Adjective, Ex: `Eatable`
 - can be noun if the interface marked as parent class (Ex: `LocationService`) or presented as a family of classes (Ex: `List`, `Map`)
 - should not start/end with `_` / `$`
-```
+```java
 public interface Focusable {
     ...
 }
@@ -90,7 +94,7 @@ public interface Focusable {
 - should be bound upto 3 words
 - should not start/end with `_` / `$` (exception for `_` if language required `_` for private modification)
 - avoid writting `Boolean` veriable's `getter/setter` using `is`. use `getValue()/setValue()`. (Ex: `void setCompleted(Boolean boolean)`, `Boolean getCompleted()`)
-```
+```java
 List<User> getAllUsers(Integer id) {
     ...
 }
@@ -102,8 +106,8 @@ List<User> getAllUsers(Integer id) {
 - should bound upto 2 words
 - should not start/end with `_` / `$` (exception for `_` if language required `_` for private modification)
 - avoid using `is` prefix for `Boolean` data type. (Ex: use `completed` instead of ~~isComplete~~ / ~~isCompleted~~ )
-```
-firstName
+```java
+String firstName;
 ```
 
 ## Constant Naming
@@ -111,27 +115,31 @@ firstName
 - should be noun
 - should bound upto 2 words
 - should not start/end with `_` / `$`
-```
-MAX_PRICE
+```java
+private Double MAX_PRICE == 99.0D;
 ```
 
 ## Abstract Class Naming
 - same as `class` naming convention, but has `Base` / `Abstract` prefix
-```
-BaseActivity()
+```java
+abstract class BaseActivity {
+    ...
+}
 ```
 
 ## Exception Class Naming
 - same as `class` naming convention, but has `Exception` postfix
-```
-MessageNotFoundException
+```java
+public class MessageNotFoundException extends Exception {
+    ...
+}
 ```
 
 ## Enum Member Naming
 - should be noun
 - should be `UPPERCASE` with `UNDER_SCORE` between words
 - upto 2 words
-``` 
+```java
 public enum Status {
     NOT_COMPLETE,
     COMPLETE
@@ -142,7 +150,7 @@ public enum Status {
 - `T` for general purpose use
 - `E` for collection elements
 - `K` & `V` for key-value pair
-```
+```java
 public interface StudentMap<K,V> {
     ....
 }
@@ -151,7 +159,7 @@ public interface StudentMap<K,V> {
 ## Annotaion Naming
 - should be `UpperCammelCase`
 - can be noun/adjective/verb based on use-case
-```
+```java
 public @interface EnableCaching
 
 public @interface Depricated
@@ -160,15 +168,19 @@ public @interface Depricated
 ## Unit Test Class Naming
 - should follow `class-under-test`'s package structure for the test class
 - name should be same as `class-under-test`'s name with `Test` postfix
-```
-TransactionTest
+```java
+public class TransactionTest {
+    ...
+}
 ```
 
 ### Integration Test Class Naming
 - should follow `class-under-test`'s package structure for the test class
 - name should be same as `class-under-test`'s name with `IntegTest` postfix
-```
-TransactionIntegTest
+```java
+public class TransactionIntegTest {
+    ...
+}
 ```
 
 ### Test method Naming
@@ -177,7 +189,7 @@ TransactionIntegTest
 - `GIVEN` block describe the precondition of the test.
 - `WHEN` block describe the condition of the test.
 - `THEN` block describe the desired output of the test.
-```
+```java
 @Test
 void getAllUsers_givenDBAccessFailure_whenDBReturnEmpty_thenShouldReturnEmptyList() {
     ...
@@ -198,7 +210,7 @@ void getAllUsers_givenDBAccessFailure_whenDBReturnEmpty_thenShouldReturnEmptyLis
 - Line break after the opening brace.
 - Line break before the closing brace.
 - Line break after the closing brace, only if that brace terminates a statement or terminates the body of a method, constructor, or named class. For example, there is no line break after the brace if it is followed by else or a comma.
-```
+```java
 return () -> {
     while (condition()) {
         method();
@@ -224,24 +236,26 @@ class MyClass() {
 }
 ```
 - always use braces for single-line blocks.
-    ```
+    ```java
     if (condition()) {
         statement();
     } 
     ```
 - for empty blocks, block should be closed in the next line.
-  ```
+  ```java
   if (condition()) {
   }
   ```
 
 ## Parentheses `()`
 - No space is used between the `(` character and its following character. Same for the `)` character and its preceding character.
-  ```
-  statement(Integer i);
+  ```java
+  void statement(Integer i) {
+      ...
+  }
   ```
 - if method has multiple parameters, their should be a space between them in the method declaration & metthod calling
-  ```
+  ```java
   void statement(Integer i, String st, Status status) {
       ...
   }
@@ -253,7 +267,7 @@ class MyClass() {
 
 ## Operator
 - There must be one space at both left and right side of operators, such as `=`, `&&`, `+`, `-`, ternary operator, etc.
-  ```
+  ```java
   Integer i = 10;
   Boolean b = false;
   if (i == 10 && b == true) {
@@ -270,7 +284,7 @@ class MyClass() {
 - for Array, use `[]` after type, instead of variable name. (Ex: use `String[] names;` instead of ~~String names[]~~ )
 - for `Long` value use `L` instead of ~~l~~, & for `Double` value use `D` instead of ~~d~~. use these literals when ever possible.
 - if language supports, use `under_score` between big integer value for easy reading purpose.
-    ```
+    ```java
     Integer money = 1_00_000;
     ```
 
