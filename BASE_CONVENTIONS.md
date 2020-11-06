@@ -20,15 +20,15 @@ class MyClass() {
     @Override
     public void method() {
         if (condition()) {
-        try {
-            something();
-        } catch (ProblemException e) {
-            recover();
-        }
+            try {
+                something();
+            } catch (ProblemException e) {
+                recover();
+            }
         } else if (otherCondition()) {
-        somethingElse();
+            somethingElse();
         } else {
-        lastThing();
+            lastThing();
         }
     }
 }
