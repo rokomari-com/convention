@@ -2,19 +2,55 @@
 
 # Table of Contents
 
-- [Naming Conventions](https://github.com/fahim44/convention/blob/master/README.md#naming-conventions) : Describe various programming naming schema (ex: variable, method names etc)
+- [Naming Conventions](https://github.com/rokomari-com/convention/blob/master/README.md#naming-conventions) : Describe various programming naming schema (ex: variable, method names etc)
+  - [Package Naming](https://github.com/rokomari-com/convention/blob/master/README.md#package-naming)
+  - [Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#class-naming)
+  - [Interface Naming](https://github.com/rokomari-com/convention/blob/master/README.md#interface-naming)
+  - [Method Naming](https://github.com/rokomari-com/convention/blob/master/README.md#method-naming)
+  - [Veriable Naming](https://github.com/rokomari-com/convention/blob/master/README.md#veriable-naming)
+  - [Constant Naming](https://github.com/rokomari-com/convention/blob/master/README.md#constant-naming)
+  - [Abstract Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#abstract-class-naming)
+  - [Exception Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#exception-class-naming)
+  - [Enum Member Naming](https://github.com/rokomari-com/convention/blob/master/README.md#enum-member-naming)
+  - [Generic Type Naming](https://github.com/rokomari-com/convention/blob/master/README.md#generic-type-naming)
+  - [Annotaion Naming](https://github.com/rokomari-com/convention/blob/master/README.md#annotation-naming)
+  - [Unit Test Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#unit-test-class-naming)
+  - [Integration Test Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#integration-test-class-naming)
+  - [Test Method Naming](https://github.com/rokomari-com/convention/blob/master/README.md#test-method-naming)
 
-- [Base Conventions](https://github.com/fahim44/convention/blob/master/README.md#base-conventions) : Descibe the basic coding conventions.
+- [Base Conventions](https://github.com/rokomari-com/convention/blob/master/README.md#base-conventions) : Descibe the basic coding conventions.
+  - [Code Block](https://github.com/rokomari-com/convention/blob/master/README.md#code-block)
+  - [Braces](https://github.com/rokomari-com/convention/blob/master/README.md#braces-)
+  - [Parentheses](https://github.com/rokomari-com/convention/blob/master/README.md#parentheses-)
+  - [Operator](https://github.com/rokomari-com/convention/blob/master/README.md#Operator)
+  - [Control Statement](https://github.com/rokomari-com/convention/blob/master/README.md#control-statement)
+  - [Veriable](https://github.com/rokomari-com/convention/blob/master/README.md#veriable)
+  - [Class](https://github.com/rokomari-com/convention/blob/master/README.md#class)
 
-- [Java Conventions](https://github.com/fahim44/convention/blob/master/README.md#java-conventions) : Describe the **JAVA** programming language conventions
+- [Java Conventions](https://github.com/rokomari-com/convention/blob/master/README.md#java-conventions) : Describe the **JAVA** programming language conventions
 
-- [Spring Conventions](https://github.com/fahim44/convention/blob/master/README.md#spring-conventions) : Describe the **Spring Framework** project related conventions.
+- [Spring Conventions](https://github.com/rokomari-com/convention/blob/master/README.md#spring-conventions) : Describe the **Spring Framework** project related conventions.
+  - [Project Bootstrap](https://github.com/rokomari-com/convention/blob/master/README.md#project-bootstrap)
+  - [Api Design Guide](https://github.com/rokomari-com/convention/blob/master/README.md#api-design-guide)
+  - [Application Architecture](https://github.com/rokomari-com/convention/blob/master/README.md#application-architecture)
+  - [Application Properties](https://github.com/rokomari-com/convention/blob/master/README.md#application-properties)
+  - [Application Folder Structure](https://github.com/rokomari-com/convention/blob/master/README.md#application-folder-structure)
+  - [Banner](https://github.com/rokomari-com/convention/blob/master/README.md#banner)
+  - [Copyright Text](https://github.com/rokomari-com/convention/blob/master/README.md#copyright-text)
+  - [Database](https://github.com/rokomari-com/convention/blob/master/README.md#database)
+  - [Datatype](https://github.com/rokomari-com/convention/blob/master/README.md#datatype)
+  - [Docker](https://github.com/rokomari-com/convention/blob/master/README.md#docker)
+  - [File and Method Naming](https://github.com/rokomari-com/convention/blob/master/README.md#file-and-method-naming)
+  - [General Convention](https://github.com/rokomari-com/convention/blob/master/README.md#general-convention)
+  - [Hibernate](https://github.com/rokomari-com/convention/blob/master/README.md#hibernate)
+  - [Port Arrangement](https://github.com/rokomari-com/convention/blob/master/README.md#port-arrangement)
+  - [View Layer](https://github.com/rokomari-com/convention/blob/master/README.md#view-layer)
 
 ---
 
 # Naming Conventions
 
-## Package naming
+## Package Naming
 - should be noun
 - should be all `lowercase`
 - should be only one word after each dot
@@ -23,7 +59,7 @@
 com.rokomari.model
 ```
 
-## Class naming
+## Class Naming
 - should be noun
 - should be `UpperCammelCase`
 - should bound the namming upto 2 words
@@ -35,7 +71,7 @@ com.rokomari.model
 CompanyService
 ```
 
-## Interface naming
+## Interface Naming
 - should be `UpperCammelCase`
 - should be Adjective, Ex: `Eatable`
 - can be noun if the interface marked as parent class (Ex: `LocationService`) or presented as a family of classes (Ex: `List`, `Map`)
@@ -46,7 +82,7 @@ public interface Focusable {
 }
 ```
 
-## Method naming
+## Method Naming
 - should be verb, like giving a command/action
 - should be `lowerCammelCase`
 - should contains upto highest 3 params. If required > 3 params, params should wrap around into a model and pass.
@@ -60,7 +96,7 @@ List<User> getAllUsers(Integer id) {
 }
 ```
 
-## Veriable naming
+## Veriable Naming
 - should be noun
 - should be in `lowerCammelCase`
 - should bound upto 2 words
@@ -70,7 +106,7 @@ List<User> getAllUsers(Integer id) {
 firstName
 ```
 
-## Constants naming
+## Constant Naming
 - should be `UPPERCASE` with `UNDER_SCORE` between words
 - should be noun
 - should bound upto 2 words
@@ -79,19 +115,19 @@ firstName
 MAX_PRICE
 ```
 
-## Abstract Class naming
+## Abstract Class Naming
 - same as `class` naming convention, but has `Base` / `Abstract` prefix
 ```
 BaseActivity()
 ```
 
-## Exception Class naming
+## Exception Class Naming
 - same as `class` naming convention, but has `Exception` postfix
 ```
 MessageNotFoundException
 ```
 
-## Enum member naming
+## Enum Member Naming
 - should be noun
 - should be `UPPERCASE` with `UNDER_SCORE` between words
 - upto 2 words
@@ -102,7 +138,7 @@ public enum Status {
 }
 ```
 
-## Generic Type naming
+## Generic Type Naming
 - `T` for general purpose use
 - `E` for collection elements
 - `K` & `V` for key-value pair
@@ -112,7 +148,7 @@ public interface StudentMap<K,V> {
 }
 ```
 
-## Annotaions naming
+## Annotaion Naming
 - should be `UpperCammelCase`
 - can be noun/adjective/verb based on use-case
 ```
@@ -121,21 +157,21 @@ public @interface EnableCaching
 public @interface Depricated
 ```
 
-## Unit Test Class naming
+## Unit Test Class Naming
 - should follow `class-under-test`'s package structure for the test class
 - name should be same as `class-under-test`'s name with `Test` postfix
 ```
 TransactionTest
 ```
 
-### Integration Test Class naming
+### Integration Test Class Naming
 - should follow `class-under-test`'s package structure for the test class
 - name should be same as `class-under-test`'s name with `IntegTest` postfix
 ```
 TransactionIntegTest
 ```
 
-### Test method naming
+### Test method Naming
 - method name breaks down into `4` sections. (`method-under-test`, `GIVEN block`[Optinal], `WHEN block`, `THEN block`). each block should follow `lowerCammelCase` & between them should have `under_score`.
 - `GIVEN`,`WHEN`,`THEN` blocks should prefix with respective type names.
 - `GIVEN` block describe the precondition of the test.
@@ -150,13 +186,13 @@ void getAllUsers_givenDBAccessFailure_whenDBReturnEmpty_thenShouldReturnEmptyLis
 
 --- 
 
-# Base Convetions
+# Base Conventions
 
-# code blocks
+## Code Block
 - use `4` spaces for block indentation.
 - Use a single blank line to separate sections with the same logic or semantics.
 
-### braces `{}`
+## Braces `{}`
 - A space before opening brace.
 - No line break before the opening brace.
 - Line break after the opening brace.
@@ -199,7 +235,7 @@ class MyClass() {
   }
   ```
 
-## parentheses `()`
+## Parentheses `()`
 - No space is used between the `(` character and its following character. Same for the `)` character and its preceding character.
   ```
   statement(Integer i);
@@ -215,7 +251,7 @@ class MyClass() {
 - There must be one space between keywords, such as if/for/while/do/switch/try/catch/finally etc, and parentheses.
 ---
 
-## operator
+## Operator
 - There must be one space at both left and right side of operators, such as `=`, `&&`, `+`, `-`, ternary operator, etc.
   ```
   Integer i = 10;
@@ -226,10 +262,10 @@ class MyClass() {
   }
   ```
 
-## control statetments
+## Control Statetment
 - In a `switch` block, each case should be finished by *break/return*. If not, a note should be included to describe at which case it will stop. Within every `switch` block, a default statement must be present, even if it is empty.
 
-## variable
+## Variable
 - avoid using premitive data type if the language provide equivalent reference type. (Ex: for **Java** use `Integer` instead of ~~int~~)
 - for Array, use `[]` after type, instead of variable name. (Ex: use `String[] names;` instead of ~~String names[]~~ )
 - for `Long` value use `L` instead of ~~l~~, & for `Double` value use `D` instead of ~~d~~. use these literals when ever possible.
@@ -238,7 +274,7 @@ class MyClass() {
     Integer money = 1_00_000;
     ```
 
-## class
+## Class
 - for ***OOP*** languages, every file should contains `1` top level class.
 - source file should contains followings **in order**
   1. License or copyright information, if present
