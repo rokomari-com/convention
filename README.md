@@ -9,24 +9,25 @@
   - [Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#class-naming)
   - [Interface Naming](https://github.com/rokomari-com/convention/blob/master/README.md#interface-naming)
   - [Method Naming](https://github.com/rokomari-com/convention/blob/master/README.md#method-naming)
-  - [Veriable Naming](https://github.com/rokomari-com/convention/blob/master/README.md#veriable-naming)
+  - [Variable Naming](https://github.com/rokomari-com/convention/blob/master/README.md#variable-naming)
   - [Constant Naming](https://github.com/rokomari-com/convention/blob/master/README.md#constant-naming)
   - [Abstract Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#abstract-class-naming)
   - [Exception Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#exception-class-naming)
   - [Enum Member Naming](https://github.com/rokomari-com/convention/blob/master/README.md#enum-member-naming)
   - [Generic Type Naming](https://github.com/rokomari-com/convention/blob/master/README.md#generic-type-naming)
-  - [Annotaion Naming](https://github.com/rokomari-com/convention/blob/master/README.md#annotation-naming)
+  - [Annotation Naming](https://github.com/rokomari-com/convention/blob/master/README.md#annotation-naming)
   - [Unit Test Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#unit-test-class-naming)
   - [Integration Test Class Naming](https://github.com/rokomari-com/convention/blob/master/README.md#integration-test-class-naming)
   - [Test Method Naming](https://github.com/rokomari-com/convention/blob/master/README.md#test-method-naming)
 
 - [Base Conventions](https://github.com/rokomari-com/convention/blob/master/README.md#base-conventions) : Descibe the basic coding conventions.
+  - [Copyright Text](https://github.com/rokomari-com/convention/blob/master/README.md#copyright-text)
   - [Code Block](https://github.com/rokomari-com/convention/blob/master/README.md#code-block)
   - [Braces](https://github.com/rokomari-com/convention/blob/master/README.md#braces-)
   - [Parentheses](https://github.com/rokomari-com/convention/blob/master/README.md#parentheses-)
   - [Operator](https://github.com/rokomari-com/convention/blob/master/README.md#Operator)
   - [Control Statement](https://github.com/rokomari-com/convention/blob/master/README.md#control-statement)
-  - [Veriable](https://github.com/rokomari-com/convention/blob/master/README.md#veriable)
+  - [Variable](https://github.com/rokomari-com/convention/blob/master/README.md#variable)
   - [Class](https://github.com/rokomari-com/convention/blob/master/README.md#class)
 
 - [Java Conventions](https://github.com/rokomari-com/convention/blob/master/README.md#java-conventions) : Describe the **JAVA** programming language conventions
@@ -100,7 +101,7 @@ List<User> getAllUsers(Integer id) {
 }
 ```
 
-## Veriable Naming
+## Variable Naming
 - should be noun
 - should be in `lowerCammelCase`
 - should bound upto 2 words
@@ -156,7 +157,7 @@ public interface StudentMap<K,V> {
 }
 ```
 
-## Annotaion Naming
+## Annotation Naming
 - should be `UpperCammelCase`
 - can be noun/adjective/verb based on use-case
 ```java
@@ -199,6 +200,13 @@ void getAllUsers_givenDBAccessFailure_whenDBReturnEmpty_thenShouldReturnEmptyLis
 --- 
 
 # Base Conventions
+
+## Copyright Text
+
+- Add copyright text in the start of every file. For example :
+
+        Copyright (c), Onnorokom Web Services Ltd (OWSL) and/or its affiliates. All rights reserved.
+        OWSL PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
 
 ## Code Block
 - use `4` spaces for block indentation.
@@ -531,13 +539,6 @@ class MyClass() {
 1. Add project info text under the banner. Add main project name before service name for microservice.
 
         :: rokomari_notificationservice :: Spring Boot${spring-boot.formatted-version} :: (c) OWSL 2012-2020 ::
-
-## Copyright Text
-
-1. Use following copyright text in all .java files - 
-
-        Copyright (c), Onnorokom Web Services Ltd (OWSL) and/or its affiliates. All rights reserved.
-        OWSL PROPRIETARY/CONFIDENTIAL. Use is subject to license terms.
 
 
 ## Database
