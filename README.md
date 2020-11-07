@@ -316,6 +316,7 @@ class MyClass() {
   7. public methods & thier dependent private methods
   8. inner static class
   9. inner class
+  10. supporting enum class
 
   **Exactly one blank line** separates each section that is present.
 
