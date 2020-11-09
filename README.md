@@ -512,6 +512,8 @@ class MyClass() {
             ├───enumeration             <- enumerations which are used multiple class wide
             ├───exception               <- custom exceptions
             ├───model                   <- model classes used inside application or for REST APIs
+            |   ├───receive             <- model classes for REST APIs, received from another service
+            |   └───send                <- model classes for REST APIs, send to another service
             ├───repository
             ├───service
             ├───utility
