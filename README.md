@@ -800,5 +800,3 @@ class MyClass() {
 1. Use hyphen separated small case for URL.
 
         rokomari.com/this-is-an-example-url
-
-https://specs.openstack.org/openstack/api-wg/guidelines/pagination_filter_sort.html
