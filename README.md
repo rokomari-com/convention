@@ -1,8 +1,7 @@
 # Code conventions followed in [Rokomari.com](https://www.rokomari.com)
 
----
 
-# Table of Contents
+## Table of Contents
 
 - [Naming Conventions](https://github.com/rokomari-com/convention/blob/master/README.md#naming-conventions) : Describe various programming naming schema (ex: variable, method names etc)
   - [Package Naming](https://github.com/rokomari-com/convention/blob/master/README.md#package-naming)
@@ -49,7 +48,6 @@
   - [Port Arrangement](https://github.com/rokomari-com/convention/blob/master/README.md#port-arrangement)
   - [View Layer](https://github.com/rokomari-com/convention/blob/master/README.md#view-layer)
 
----
 
 # Naming Conventions
 
