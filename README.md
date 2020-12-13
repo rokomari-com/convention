@@ -88,7 +88,7 @@ public interface Focusable {
 ## Method Naming
 - should be verb, like giving a command/action
 - should be `lowerCammelCase`
-- should contains upto highest 3 params. If required > 3 params, params should wrap around into a model and pass.
+- should contains upto highest 5 params. If required > 5 params, params should wrap around into a model and pass.
 - if the language support named params, priotize them.
 - should be bound upto 3 words
 - should not start/end with `_` / `$` (exception for `_` if language required `_` for private modification)
