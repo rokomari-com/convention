@@ -88,7 +88,7 @@ public interface Focusable {
 ## Method Naming
 - should be verb, like giving a command/action
 - should be `lowerCammelCase`
-- should contains upto highest 3 params. If required > 3 params, params should wrap around into a model and pass.
+- should contains upto highest 5 params. If required > 5 params, params should wrap around into a model and pass.
 - if the language support named params, priotize them.
 - should be bound upto 3 words
 - should not start/end with `_` / `$` (exception for `_` if language required `_` for private modification)
@@ -284,6 +284,17 @@ class MyClass() {
 
 ## Control Statetment
 - In a `switch` block, each case should be finished by *break/return*. If not, a note should be included to describe at which case it will stop. Within every `switch` block, a default statement must be present, even if it is empty.
+
+## Import
+- Always import all classes separately, donot import all classes of a package using wildclause character (for example: `*` ).
+```java
+import com.rokomari.app.service.A;
+import com.rokomari.app.service.B;
+import com.rokomari.app.service.C;
+import com.rokomari.app.service.D;
+import com.rokomari.app.service.E;
+import com.rokomari.app.service.F;
+```
 
 ## Variable
 - avoid using premitive data type if the language provide equivalent reference type. (Ex: for **Java** use `Integer` instead of ~~int~~)
